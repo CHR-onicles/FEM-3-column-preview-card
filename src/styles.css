@@ -10,7 +10,9 @@ FONTS
  --clr-white: hsla(0, 0%, 100%, 0.75);
  --clr-gray-light: hsl(0, 0%, 95%);
  --radius: 8px;
- --radius-2: 20px;
+ --radius-2: 40px;
+ --ff-primary: 'Big Shoulders Display', cursive; 
+ --ff-secondary: 'Lexend Deca', sans-serif;
 }
 *, *::before, *::after{
     padding: 0;
@@ -18,8 +20,11 @@ FONTS
     box-sizing: border-box;
 }
 h1{
-    font-size: clamp(1.5rem, 2vw + .5rem, 2.3rem);
+    font-size: clamp(1.5rem, 2vw + .5rem, 2.2rem);
     color: var(--clr-gray-light);
+    text-transform: uppercase;
+    font-family: var(--ff-primary);
+    font-weight: 700;
 }
 p{
     color: var(--clr-white);
@@ -27,13 +32,28 @@ p{
 body{
     font-size: 15px;
     background: var(--clr-gray-light);
+    display: grid;
+    place-items: center;
+    font-family: var(--ff-secondary);
+    padding: 2rem 0;
 }
 main{
-    width: 90vw;
-    height: 90vh;
+    width: min(75vw, 450px);
     padding: 2rem;
     display: flex;
     flex-direction: column;
+}
+article{
+    height: 350px;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-items: left;
+    align-items: left;
+    gap: 1.5rem;
+}
+article img{
+    width: 50px;
 }
 article:nth-child(1){
     background: var(--clr-bright-orange);
@@ -48,12 +68,26 @@ article:nth-child(3){
     border-bottom-left-radius: var(--radius);
     border-bottom-right-radius: var(--radius);
 }
-
-
+button{
+    max-width: 10em;
+    padding: 1em;
+    border: none;
+    border-radius: var(--radius-2);
+}
+article:nth-child(1) button{color: var(--clr-bright-orange)}
+article:nth-child(2) button{color: var(--clr-dark-cyan)}
+article:nth-child(3) button{color: var(--clr-very-dark-cyan)}
 .attribution {
     font-size: 11px;
     text-align: center;
+    padding: 1rem;
 }
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 800px) {
+    body{
+        /* background: lightblue; */
+    }
 }
