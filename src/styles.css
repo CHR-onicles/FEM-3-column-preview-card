@@ -60,7 +60,7 @@ article{
     transition: var(--transition);
 }
 article img{
-    width: 50px;
+    width: 60px;
 }
 article:nth-child(1){
     background: var(--clr-bright-orange);
