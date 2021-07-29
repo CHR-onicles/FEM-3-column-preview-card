@@ -104,12 +104,17 @@ article button:hover{
 }
 
 @media screen and (min-width: 800px) {
+    body{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     main{
         display: flex;
         flex-direction: row;
-        margin: auto;
-    }
-    main{
+        margin: auto 0;
         width: min(95vw, 57.1875rem);
         padding: 1rem;
     }
