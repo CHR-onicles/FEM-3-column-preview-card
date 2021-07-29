@@ -3,6 +3,10 @@ FONTS
 ============================*/
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+/*============================
+GLOBAL VARIABLES
+============================*/
 :root{
  --clr-bright-orange: hsl(31, 77%, 52%);
  --clr-dark-cyan: hsl(184, 100%, 22%);
@@ -13,6 +17,7 @@ FONTS
  --radius-2: 40px;
  --ff-primary: 'Big Shoulders Display', cursive; 
  --ff-secondary: 'Lexend Deca', sans-serif;
+ --transition: all .3s;
 }
 *, *::before, *::after{
     padding: 0;
@@ -20,7 +25,7 @@ FONTS
     box-sizing: border-box;
 }
 h1{
-    font-size: clamp(1.5rem, 2vw + .5rem, 2.2rem);
+    font-size: clamp(1.8rem, 2vw + .8rem, 2.2rem);
     color: var(--clr-gray-light);
     text-transform: uppercase;
     font-family: var(--ff-primary);
@@ -38,19 +43,21 @@ body{
     padding: 2rem 0;
 }
 main{
-    width: min(75vw, 450px);
+    width: min(95vw, 23.4375rem);
     padding: 2rem;
     display: flex;
     flex-direction: column;
+    transition: var(--transition);
 }
 article{
-    height: 350px;
+    min-height: 21.875rem;
     padding: 3rem;
     display: flex;
     flex-direction: column;
     justify-items: left;
     align-items: left;
     gap: 1.5rem;
+    transition: var(--transition);
 }
 article img{
     width: 50px;
@@ -75,7 +82,7 @@ button{
     border-radius: var(--radius-2);
     font-family: var(--ff-secondary);
     font-weight: 600;
-    transition: all .3s ease;
+    transition: var(--transition);
     letter-spacing: 1px;
 }
 article:nth-child(1) button{color: var(--clr-bright-orange)}
@@ -96,8 +103,31 @@ article button:hover{
     color: hsl(228, 45%, 44%);
 }
 
-@media screen and (max-width: 800px) {
-    body{
-        /* background: lightblue; */
+@media screen and (min-width: 800px) {
+    main{
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+    }
+    main{
+        width: min(95vw, 57.1875rem);
+        padding: 1rem;
+    }
+    article{
+        width: 37.5rem;
+        height: 28.125rem;
+    }
+    article:nth-child(1){
+        border-top-right-radius: initial;
+        border-top-left-radius: var(--radius);
+        border-bottom-left-radius: var(--radius);
+    }
+    article:nth-child(3){
+        border-bottom-left-radius: initial;
+        border-top-right-radius: var(--radius);
+        border-bottom-right-radius: var(--radius);
+    }
+    article p{
+        margin-bottom: 3rem;
     }
 }
