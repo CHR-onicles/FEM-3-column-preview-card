@@ -73,10 +73,20 @@ button{
     padding: 1em;
     border: none;
     border-radius: var(--radius-2);
+    font-family: var(--ff-secondary);
+    font-weight: 600;
+    transition: all .3s ease;
+    letter-spacing: 1px;
 }
 article:nth-child(1) button{color: var(--clr-bright-orange)}
 article:nth-child(2) button{color: var(--clr-dark-cyan)}
 article:nth-child(3) button{color: var(--clr-very-dark-cyan)}
+article button:hover{
+    color: var(--clr-white);
+    background: transparent;
+    border: 2px solid var(--clr-white);
+    cursor: pointer;
+}
 .attribution {
     font-size: 11px;
     text-align: center;
